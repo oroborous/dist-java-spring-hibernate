@@ -7,7 +7,8 @@ import java.time.format.DateTimeParseException;
 public class DateUtils {
 
     private static final String DB_PATTERN = "yyyy-MM-dd";
-    private static final String WEB_PATTERN = "yyyy-MM-dd HH:mm:ss.S";
+    // private static final String OLD_WEB_PATTERN = "yyyy-MM-dd HH:mm:ss.S";
+    private static final String WEB_PATTERN = "yyyy-MM-dd";
     private static final String HUMAN_FRIENDLY_PATTERN = "MMMM d, yyyy";
 
     public static LocalDate parseDatabaseDate(String str) {

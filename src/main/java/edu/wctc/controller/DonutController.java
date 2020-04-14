@@ -56,7 +56,7 @@ public class DonutController {
     public String showAddDonutForm(Model theModel) {
         Donut theDonut = new Donut();
 
-        theModel.addAttribute("donut", theDonut);
+        theModel.addAttribute("aDonut", theDonut);
 
         theModel.addAttribute("donutShops", donutShopService.getDonutShops());
 
@@ -70,7 +70,7 @@ public class DonutController {
         Donut theDonut = donutService.getDonut(theId);
 
         // Set donut as a model attribute to pre-populate the form
-        theModel.addAttribute("donut", theDonut);
+        theModel.addAttribute("aDonut", theDonut);
 
         theModel.addAttribute("donutShops", donutShopService.getDonutShops());
 

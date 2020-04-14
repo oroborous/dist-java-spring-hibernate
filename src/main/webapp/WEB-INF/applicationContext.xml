@@ -131,5 +131,5 @@
          to the /resources/ folder -->
     <!-- Stops static file requests from going to dispatcher servlet -->
     <!-- See https://stackoverflow.com/questions/40188743/double-asterisk-in-a-request-mapping/40202997 -->
-    <mvc:resources mapping="/resources/**" location="/WEB-INF/resources/"></mvc:resources>
+    <mvc:resources mapping="/resources/**" location="/WEB-INF/resources/"/>
 </beans>

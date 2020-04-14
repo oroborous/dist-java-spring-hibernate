@@ -16,11 +16,11 @@
 <div id="container">
 
     <div id="content">
-        <form:form action="${cp}/donut/save" modelAttribute="donut" enctype="multipart/form-data"
+        <form:form action="${cp}/donut/save" modelAttribute="aDonut" enctype="multipart/form-data"
                    method="post">
-            <form:hidden path="id" value="${donut.id}"/>
-            <form:hidden path="imageId" value="${donut.imageId}"/>
-            <form:hidden path="dateAdded" value="${donut.dateAdded}"/>
+            <form:hidden path="id" value="${aDonut.id}"/>
+            <form:hidden path="imageId" value="${aDonut.imageId}"/>
+            <form:hidden path="dateAdded" value="${aDonut.dateAdded}"/>
 
             <table>
                 <tr>
@@ -46,9 +46,9 @@
                     <td><label>Image</label></td>
                     <td>
                         <input type="file" name="imageFile">
-                        <c:if test="${donut.imageId != null}">
+                        <c:if test="${aDonut.imageId != null}">
                             <br/><br/>
-                            <img src="${cp}/image/display?id=${donut.imageId}" alt="${donut.name}">
+                            <img src="${cp}/image/display?id=${aDonut.imageId}" alt="${aDonut.name}">
                         </c:if>
                     </td>
                 </tr>

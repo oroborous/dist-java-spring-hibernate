@@ -23,6 +23,8 @@ public class ImageServiceImpl implements ImageService {
     @Autowired
     private ServletContext servletContext;
 
+    // A placeholder image (not in the database) for
+    // donuts without their own image
     private Image notFoundImage;
 
     @Transactional
