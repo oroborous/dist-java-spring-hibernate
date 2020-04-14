@@ -93,7 +93,6 @@
             <list>
                 <bean class="edu.wctc.service.converter.StringToDonutShopConverter"/>
                 <bean class="edu.wctc.service.converter.StringToDateConverter"/>
-                <bean class="edu.wctc.service.converter.FileToImageConverter"/>
             </list>
         </property>
     </bean>
