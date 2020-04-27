@@ -32,7 +32,7 @@ public class DonutController {
     @Autowired
     private DonutShopService donutShopService;
 
-    @GetMapping("/delete")
+    @GetMapping("/admin/delete")
     public String deleteDonut(@RequestParam("donutId") int theId) {
         // Delete the donut
         donutService.deleteDonut(theId);
@@ -63,7 +63,7 @@ public class DonutController {
         return "donut-form";
     }
 
-    @RequestMapping("/showUpdateDonutForm")
+    @RequestMapping("/user/showUpdateDonutForm")
     public String showUpdateDonutForm(@RequestParam("donutId") int theId,
                                       Model theModel) {
         // Get donut from the database
@@ -79,7 +79,7 @@ public class DonutController {
     }
 
 
-    @PostMapping("/save")
+    @PostMapping("/user/save")
     public String saveDonut(@RequestParam("imageFile") MultipartFile file,
                             @Valid @ModelAttribute("donut") Donut theDonut,
                             BindingResult bindingResult,

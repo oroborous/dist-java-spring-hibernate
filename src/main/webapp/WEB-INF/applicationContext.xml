@@ -4,7 +4,6 @@
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:security="http://www.springframework.org/schema/security"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/mvc
@@ -12,42 +11,10 @@
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context.xsd
                            http://www.springframework.org/schema/tx
-                           http://www.springframework.org/schema/tx/spring-tx.xsd
-                           http://www.springframework.org/schema/security
-                           http://www.springframework.org/schema/security/spring-security.xsd">
-    <!-- BEGIN SECURITY CONFIGURATION -->
+                           http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <security:http use-expressions="true" authentication-manager-ref="myAuthenticationManager" >
-        <security:intercept-url pattern="/donut/admin/**" access="hasRole('ADMIN')"/>
-        <security:intercept-url pattern="/donut/user/**" access="hasRole('USER')"/>
-        <security:intercept-url pattern="/resources/**" access="permitAll()"/>
-        <security:intercept-url pattern="/**" access="permitAll()" />
 
-        <!-- We don't need to write a mapping for "authenticate"
-        Spring understands how to process login if we name everything correctly -->
-        <security:form-login
-                login-page="/showLoginForm"
-                login-processing-url="/authenticate"
-                authentication-failure-url="/showLoginForm?error=true"
-                username-parameter="username"
-                password-parameter="password"
-                default-target-url="/donut/list"/>
-        <security:logout logout-url="/logout"
-                         logout-success-url="/showLoginForm?logout=true"/>
-    </security:http>
-
-    <security:authentication-manager id="myAuthenticationManager" >
-        <security:authentication-provider>
-            <security:user-service id="myUserService">
-                <security:user name="user" password="p" authorities="USER"/>
-                <security:user name="admin" password="p" authorities="USER,ADMIN"/>
-            </security:user-service>
-        </security:authentication-provider>
-    </security:authentication-manager>
-
-    <!-- END SECURITY CONFIGURATION -->
-
-    <!-- BEGIN NEW HIBERNATE CONFIGURATION -->
+    <!-- BEGIN HIBERNATE CONFIGURATION -->
 
     <!-- Data source and connection pool bean -->
     <!-- C3P0 library provides connection pool -->
@@ -105,7 +72,7 @@
     <!-- Enable transactional annotations -->
     <tx:annotation-driven transaction-manager="myTransactionManager"/>
 
-    <!-- END NEW HIBERNATE CONFIGURATION -->
+    <!-- END HIBERNATE CONFIGURATION -->
 
     <!-- Support for component scanning -->
     <context:component-scan base-package="edu.wctc.dao, edu.wctc.controller, edu.wctc.service"/>

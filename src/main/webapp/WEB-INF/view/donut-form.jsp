@@ -16,7 +16,7 @@
 <div id="container">
 
     <div id="content">
-        <form:form action="${cp}/donut/save" modelAttribute="aDonut" enctype="multipart/form-data"
+        <form:form action="${cp}/donut/user/save" modelAttribute="aDonut" enctype="multipart/form-data"
                    method="post">
             <form:hidden path="id" value="${aDonut.id}"/>
             <form:hidden path="imageId" value="${aDonut.imageId}"/>

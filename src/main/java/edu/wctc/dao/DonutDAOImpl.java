@@ -48,13 +48,16 @@ public class DonutDAOImpl implements DonutDAO {
         // Get current Hibernate session
         Session session = sessionFactory.getCurrentSession();
 
-        // Delete object using primary key
-        Query query = session.createQuery("delete from Donut where id = :doomedDonutId");
-        // Set parameter value
-        query.setParameter("doomedDonutId", theId);
+        // Select the object to get a persistent copy
+        Donut doomedDonut = session.get(Donut.class, theId);
 
-        // Perform the delete
-        query.executeUpdate();
+        // Only delete if ID was valid
+        if (doomedDonut != null) {
+            // Deleting this way will properly cascade deletes
+            // and associated objects (like DonutReviews) will
+            // also be deleted
+            session.delete(doomedDonut);
+        }
     }
 
     @Override

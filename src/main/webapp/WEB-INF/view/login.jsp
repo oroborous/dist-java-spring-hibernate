@@ -7,13 +7,11 @@
     <title>Login</title>
     <link type="text/css" rel="stylesheet" href="${cp}/resources/css/style.css">
     <link type="text/css" rel="stylesheet" href="${cp}/resources/css/donut-form-style.css">
+    <link type="text/css" rel="stylesheet" href="${cp}/resources/css/select-style.css">
 </head>
 <body>
-<div id="wrapper">
-    <div id="header">
-        <h2>Donut Reviews</h2>
-    </div>
-</div>
+
+<%@include file="/WEB-INF/view/includes/header.jsp" %>
 
 <div id="container">
     <div id="content">
@@ -30,12 +28,12 @@
                 <tr>
                     <td><label>Username</label></td>
                     <!-- Spring expects this to have name="username" -->
-                    <td><input type="text" name="username" value="user"></td>
+                    <td><input type="text" name="username"></td>
                 </tr>
                 <tr>
                     <td><label>Password</label></td>
                     <!-- Spring expects this to have name="password" -->
-                    <td><input type="text" name="password" value="p"></td>
+                    <td><input type="password" name="password"></td>
                 </tr>
                 <tr>
                     <td></td>

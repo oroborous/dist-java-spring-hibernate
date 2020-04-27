@@ -9,7 +9,10 @@
        -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/applicationContext.xml</param-value>
+        <param-value>
+            /WEB-INF/applicationContext.xml
+            /WEB-INF/applicationContext-security.xml
+        </param-value>
     </context-param>
 
     <!-- Requires all requests be filtered through Spring security -->
@@ -41,8 +44,8 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <!-- Show custom error page, commented out for testing -->
-    <!--<error-page>
+    <!-- Show custom error page, comment out for testing and debugging -->
+    <error-page>
         <location>/errors</location>
-    </error-page>-->
+    </error-page>
 </web-app>
